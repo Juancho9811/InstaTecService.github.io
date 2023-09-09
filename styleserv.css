@@ -1,0 +1,135 @@
+/* Mejora el Contenido de los Servicios */
+
+.contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.column-left {
+    width: 70%;
+    padding-right: 10px;
+}
+
+.column-right {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para la información de contacto y botones */
+.contact-info1 {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Lista de Problemas Comunes */
+ol{
+    list-style-type: upper-roman;
+    list-style-position: inside;
+    list-style-image: url(image/correcto.png);
+}
+
+li {
+    padding-left: 1em;
+}
+
+/* Estilos para el título centrado */
+.titulo {
+    text-align: center;
+    margin-top: -50px;
+}
+
+/* Estilos para el contenido de lavadora con padding reducido */
+.lavadora {
+    padding: 5rem;
+}
+
+.lavadora p {
+    margin-bottom: 30px;
+}
+
+/* Estilos para las imágenes centradas y reducidas */
+.lavadora img {
+    display: block;
+    margin: 10px auto;
+    max-width: 70%;
+    border-radius: 10px;
+}
+
+/* Boton de llamada */
+.boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    border: 3px solid rgb(173, 216, 230);
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    border-radius: 10px;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+}
+
+/* Estilos para el efecto hover */
+.boton::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(173, 216, 230);
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.boton:hover::before {
+    transform: translateX(0);
+}
+
+/* Estilos para el icono o imagen en el botón */
+.boton img {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+/* Estilos para centrar el texto en el botón */
+.boton span {
+    flex: 1; /* Hace que el texto ocupe todo el espacio restante horizontalmente */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+@media screen and (max-width: 720px) {
+    .titulo {
+        font-size: 20px; /* Reduce el tamaño del título */
+    }
+
+    p {
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+
+    .contenido {
+        flex-direction: column;
+    }
+
+    .column-left, .column-right {
+        width: 100%;
+        padding: 0;
+    }
+
+    ol{
+        text-align: left;
+        list-style-type: upper-roman;
+        list-style-position: inside;
+        list-style-image: url(image/correcto.png);
+    }
+}

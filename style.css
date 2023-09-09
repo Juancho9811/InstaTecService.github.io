@@ -1,0 +1,957 @@
+/* Estilos CSS con conversiones a em */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    position: relative;
+    background: linear-gradient(to right, #00aaff, #ffffff); /* Fondo gradiente con tres colores */
+}
+
+/* Header Superior */
+.header__superior {
+    max-width: 75em; /* 1200px convertidos a em */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25em; /* 20px convertidos a em */
+    background: transparent;
+}
+
+.logo img {
+    width: 12.5em; /* 200px convertidos a em */
+}
+
+/* Estilos para los elementos de contacto */
+.contact-info {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos de contacto de manera uniforme */
+    align-items: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+}
+
+.contact-item img {
+    max-width: 50px; /* Tamaño máximo para las imágenes */
+    height: auto;
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos para el texto de contacto */
+.title {
+    font-weight: bold;
+}
+
+.phone, .email, .address {
+    font-size: 14px;
+}
+
+/* Barra Menu */
+
+.container__menu {
+    width: 100%;
+    height: 4.375em; /* 70px convertidos a em */
+    background: #808080;
+    padding: 0 1.25em; /* 20px convertidos a em */
+}
+
+.menu {
+    max-width: 75em; /* 1200px convertidos a em */
+    margin: auto;
+    height: 100%;
+}
+
+nav {
+    height: 100%;
+}
+
+nav > ul {
+    height: 100%;
+    display: flex;
+}
+
+nav ul li {
+    height: 100%;
+    list-style: none;
+    position: relative;
+}
+
+nav > ul > li > a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.875em; /* 14px convertidos a em */
+    text-transform: uppercase;
+    font-size: 0.875em; /* 14px convertidos a em */
+    transition: all 300ms ease;
+}
+
+nav > ul > li > a:hover {
+    transform: scale(1.1);
+    background: #808080;
+    color: #000;
+    box-shadow: 0 0 0.625em 0 rgba(0, 0, 0, 0.5); /* 10px convertidos a em */
+}
+
+/* Sub Menu */
+nav ul li ul {
+    width: 12.5em; /* 200px convertidos a em */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 5.625em; /* 90px convertidos a em */
+    left: -0.3125em; /* -5px convertidos a em */
+    padding: 0.875em 0; /* 14px convertidos a em */
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0 0 0.625em 0 rgba(0, 0, 0, 0.5); /* 10px convertidos a em */
+    z-index: 10;
+    transition: all 300ms ease;
+}
+
+nav ul li:hover ul {
+    visibility: visible;
+    opacity: 1;
+    top: 4.375em; /* 70px convertidos a em */
+}
+
+nav ul li ul::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 0.75em solid transparent; /* 12px convertidos a em */
+    border-right: 0.75em solid transparent; /* 12px convertidos a em */
+    border-bottom: 0.75em solid white; /* 12px convertidos a em */
+    position: absolute;
+    top: -0.75em; /* -12px convertidos a em */
+    left: 1.25em; /* 20px convertidos a em */
+}
+
+nav ul li ul li a {
+    display: block;
+    color: #000;
+    padding: 0.375em 0.875em; /* 6px y 14px convertidos a em */
+    margin-top: 0.625em; /* 10px convertidos a em */
+    font-size: 0.875em; /* 14px convertidos a em */
+    text-transform: uppercase;
+    transition: all 300ms ease;
+}
+
+nav ul li ul li a:hover {
+    background: #808080;
+    color: #000;
+    transform: scale(1.1);
+    padding-left: 1.875em; /* 30px convertidos a em */
+    font-size: 0.875em; /* 14px convertidos a em */
+    box-shadow: 0 0 0.625em 0 rgba(0, 0, 0, 0.5); /* 10px convertidos a em */
+}
+
+/* Elementos Responsivos */
+
+.icon__menu {
+    font-size: 1.625em; /* 26px convertidos a em */
+    color: #fff;
+    cursor: pointer;
+    width: 1.625em; /* 26px convertidos a em */
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+#label__check {
+    width: 1.625em; /* 26px convertidos a em */
+    height: 100%;
+    display: none;
+}
+
+#check__menu {
+    display: none;
+}
+
+/* Slider de Imagenes */
+
+.container-slider {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 0 0 10px #fff, 0 15px 50px;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    width: 400%;
+    height: 400px;
+    margin-left: -100%;
+}
+
+.slider__section {
+    width: 100%;
+}   
+
+.slider__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slider__btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgb(255, 255, 255, 0.7);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.slider__btn:hover {
+    background: #fff;
+}
+
+.slider__btn--left {
+    left: 10px;
+}
+
+.slider__btn--right {
+    right: 10px;
+}
+
+/* Tarjeta de Nuestras Caracteristicas */
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    margin: -5px;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    margin: 30px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: #e8e8e8;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.content .heading {
+    font-weight: 700;
+    font-size: 28px;
+    color: #000;
+}
+
+.content .para {
+    line-height: 1.5;
+    color: #000;
+}
+
+.content .btn {
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #00aae4 0%, #fff 100%);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(-45deg, #00aae4 0%, #fff 100%);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover::before {
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: none;
+}
+
+.card:hover .btn {
+    color: #212121;
+    background: #e8e8e8;
+}
+
+.content .btn:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+}
+
+.content .btn:active {
+    box-shadow: none;
+}
+
+/* Titulos de cada pagina */
+
+/* Titulo de Nuestros Servicios*/
+.hero {
+    position: relative;
+    width: 100%; /* Ancho al 100% del contenedor padre */
+    height: 400px; /* Altura ajustable según tus necesidades */
+    background: url('image/reparacion-trabajador-mantenimiento-servicio.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+/* Titulo Nosotros - La Empresa */
+
+.hero2 {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url('image/istockphoto-1402514667-612x612.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+/* Titulo de Servicio Tecnico de lavadoras*/ 
+
+.hero1 {
+    position: relative;
+    width: 100%; /* Ancho al 100% del contenedor padre */
+    height: 400px; /* Altura ajustable según tus necesidades */
+    background: url('image/tec_lavadora.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+/* Por que Elegirnos */
+
+/* Estilos para la lista de bloques con imagen */
+.lista-bloques-con-imagen {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    padding: 20px;
+}
+
+.imagen {
+    text-align: center;
+}
+
+.imagen img {
+    max-width: 100%;
+    height: auto;
+}
+
+.contenido {
+    padding-left: 20px; /* Espacio entre la imagen y el contenido */
+}
+
+/* Estilos para el contenedor de bloques */
+.bloques {
+    display: flex;
+    flex-direction: column; /* Organiza los bloques en una columna vertical */
+    flex-grow: 1; /* Permite que los bloques ocupen todo el espacio restante */
+}
+
+/* Estilos para cada fila */
+.fila {
+    display: flex;
+    justify-content: center; /* Centra los bloques horizontalmente en la fila */
+    margin-bottom: 20px; /* Espacio entre filas */
+}
+
+/* Estilos para cada bloque */
+.bloque {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd; 
+    padding: 20px;
+    margin-right: 20px;
+    width: 300px;
+    border-radius: 15px;
+}
+
+/* Estilos para el título del bloque */
+.bloque h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Estilos para el contenido del bloque */
+.bloque p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Estilos para el título */
+.contenido h2 {
+    font-size: 34px;
+    color: #333;
+    margin-bottom: 20px; /* Espacio entre el título y los bloques */
+}
+
+/* Proceso */
+/* Estilo para el contenedor principal */
+.proceso-flecha {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna vertical */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto horizontalmente */
+    border-radius: 20px; /* Bordes redondeados */
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0); /* Fondo degradado */
+    padding: 20px; /* Espacio alrededor del contenido */
+}
+
+/* Estilo para el título */
+.titulo {
+    background-color: #f0f0f0; /* Color de fondo del título */
+    padding: 10px 20px; /* Espacio alrededor del título */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Estilo para los pasos */
+.pasos {
+    display: flex;
+    justify-content: space-between; /* Espacio uniforme entre los pasos */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilo para cada paso */
+.paso {
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0; /* Color de fondo del paso */
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%); /* Forma de flecha */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 0 10px; /* Espacio entre los pasos */
+}
+
+.paso1 {
+    background-color: #007acc; /* Azul */
+    color: #ffffff; /* Texto blanco */
+}
+
+.paso2 {
+    background-color: #00cc66; /* Verde */
+    color: #ffffff; /* Texto blanco */
+}
+
+.paso3 {
+    background-color: #ff6666; /* Rojo */
+    color: #ffffff; /* Texto blanco */
+}
+
+.paso img {
+    max-width: 60px;
+    margin-bottom: 10px;
+}
+
+/* Estilo de la flecha */
+.proceso-flecha::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #f0f0f0;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/* Footer */
+
+.pie-pagina {
+    width: 100%;
+    background-image: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url(image/footer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 50px;
+    height: 45px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+/* Boton pa Arriba */
+
+.go-top-container {
+    position: fixed;
+    bottom: -2rem;
+    right: -2rem;
+    width: 4rem;
+    height: 4rem;
+    z-index: -1;
+}
+
+.go-top-button {
+    width: 0rem;
+    height: 0rem;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.go-top-button img {
+    position: absolute;
+    font-size: 1.7rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #fff;
+    transition: .2s;
+}
+
+.show {
+    z-index: 10;
+}
+
+.show .go-top-button {
+    animation: popup .5s ease-in-out;
+    width: 3rem;
+    height: 3rem;
+    z-index: 11;
+}
+
+.show img {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes popup {
+    0% {
+        width: 0rem;
+        height: 0rem;
+    }
+
+    100% {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+/* Nosotros - Contenido */
+.contenido-empresa {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilos para la imagen lateral */
+.image-empresa {
+    width: 40%; /* Aumenta el ancho de la imagen */
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Estilos para el contenido de texto */
+.content-empresa {
+    flex: 1;
+    width: 100%;
+    margin: 5%;
+}
+
+/* Estilos para el título */
+.titu {
+    font-size: 28px; /* Aumenta el tamaño de fuente del título */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el icono junto al título */
+.titu img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Estilos para el párrafo */
+.paragraph {
+    font-size: 20px; /* Aumenta el tamaño de fuente del párrafo */
+    line-height: 1.5;
+} 
+
+/* Boton Mision y Vision */
+
+.contenido-vision-mision {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    text-align: center;
+}
+
+.mensaje {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 20px; /* Espacio entre el mensaje y los botones */
+    font-size: 16px;
+    max-width: 70%;
+}
+
+.botones-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px; /* Espacio entre los botones y el mensaje */
+}
+
+.custom-button {
+    background: linear-gradient(-45deg, #00aae4 0%, #fff 100%);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-button i {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 720px){
+
+    .header__superior {
+        padding: 0.625em; /* 10px convertidos a em */
+        display: flex;
+        flex-direction: row; /* Mantener la disposición en fila */
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo img {
+        width: 6.25em; /* 100px convertidos a em */
+    }
+
+    .contact-item.phone,
+    .contact-item.email {
+        display: block; /* Mostrar teléfono y correo en pantallas estrechas */
+    }
+
+    .contact-item.address {
+        display: none; /* Ocultar ubicación en pantallas estrechas */
+    }
+
+    nav > ul {
+        flex-direction: column;
+        background-color: #023877;
+        position: fixed;
+        left: 0;
+        top: 9.6875em; /* 155px convertidos a em */
+        width: 100%;
+        height: 0;
+        transition: all 300ms ease;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav > ul > li > a:hover {
+        transform: scale(1);
+    }
+
+    nav ul li ul {
+        left: 10.625em; /* 170px convertidos a em */
+    }
+
+    nav > ul > li:hover ul {
+        top: 3.125em;
+    }
+
+    #label__check {
+        display: block;
+    }
+
+    .icon__menu {
+        display: flex;
+    }
+
+    #check__menu:checked ~ nav > ul {
+        height: 18.75em;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .container-slider {
+        max-width: 80%; 
+    }
+
+    .slider__section {
+        width: 90%; 
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .lista-bloques-con-imagen {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imagen {
+        max-width: 40%;
+        margin: 0 auto;
+    }
+
+    .contenido {
+        padding-left: 0; 
+        text-align: center;
+    }
+
+    .bloques {
+        flex-direction: column; /* Cambia a un diseño de columna */
+    }
+
+    .bloque {
+        width: 100%; /* Asegura que los bloques ocupen todo el ancho disponible */
+        margin-right: 0; /* Elimina el margen derecho entre los bloques */
+    }
+
+    .fila {
+        margin-bottom: 10px; /* Espacio entre filas más pequeño */
+    }
+
+    .pasos {
+        flex-direction: column;
+    }
+
+    /* Ajusta el ancho máximo de los pasos para llenar la pantalla */
+    .paso {
+        flex-basis: calc(50% - 20px); /* Divide la pantalla en 2 columnas con espacio entre ellas */
+        margin: 0 0 20px; /* Agrega espacio inferior entre los bloques */
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* Forma de cuadrado */
+    }
+
+    .pie-pagina .grupo-1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+
+    .card-container {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .contenido-vision-mision {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mensaje {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .custom-button{
+        margin: 10px;
+    }
+
+    .botones-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .contenido-empresa {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-empresa {
+        float: none;
+        margin-right: 0;
+        max-width: 100%; 
+        margin: 5px;
+    }
+
+    .titu {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .paragraph {
+        margin: 10px;
+        font-size: 15px;
+    }
+
+}
+
+.whatsapp {
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+    z-index: 1;
+    width: 80px;
+}
